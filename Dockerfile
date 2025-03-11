@@ -7,6 +7,12 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install PyYAML
 
+RUN  sudo apt-get update \
+ sudo apt-get install -y clang-format \
+ pip install black \
+ npm install -g prettier
+
+COPY formatter.sh /usr/bin/formatter.sh
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
