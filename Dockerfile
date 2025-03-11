@@ -3,10 +3,10 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
  python3.10 \
  python3-pip \
- git
+ git \
+ nodejs npm
 
 RUN  apt-get update \
- apt-get install nodejs npm \
  apt-get install -y clang-format \
  pip install black \
  npm install -g prettier
