@@ -8,8 +8,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN  apt-get update \
  apt-get install -y clang-format \
- pip install black \
- npm install -g prettier
+ pip install black
+
+RUN npm install -g prettier
 
 COPY formatter.sh /usr/bin/formatter.sh
 COPY entrypoint.sh /entrypoint.sh
