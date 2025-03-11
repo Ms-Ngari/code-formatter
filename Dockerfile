@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN apt-get update 
 RUN apt-get install -y clang-format
-RUN pip install black
+RUN pip install --user black
 RUN npm install -g prettier
 
 COPY formatter.sh /usr/bin/formatter.sh
