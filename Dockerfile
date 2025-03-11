@@ -6,10 +6,9 @@ RUN apt-get update && apt-get install -y \
  git \
  nodejs npm
 
-RUN  apt-get update \
- apt-get install -y clang-format \
- pip install black
-
+RUN apt-get update 
+RUN apt-get install -y clang-format
+RUN pip install black
 RUN npm install -g prettier
 
 COPY formatter.sh /usr/bin/formatter.sh
