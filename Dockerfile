@@ -14,8 +14,8 @@ RUN npm install -g prettier
 COPY formatter.sh /formatter.sh
 COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh
-RUN chmod +x /formatter.sh
+RUN chmod -R 775 /entrypoint.sh
+RUN chmod -R 775 /formatter.sh
 
 RUN ls -l /
 
