@@ -3,16 +3,18 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
  python3.10 \
  python3-pip \
- git
+ git \
+ nodejs npm
 
-RUN pip3 install PyYAML
+RUN apt-get update 
+RUN apt-get install -y clang-format
+RUN pip install black --break-system-packages
+RUN npm install -g prettier
 
-RUN  sudo apt-get update \
- sudo apt-get install -y clang-format \
- pip install black \
- npm install -g prettier
-
-COPY formatter.sh /usr/bin/formatter.sh
+COPY formatter.sh /formatter.sh
 COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod -R 775 /entrypoint.sh
+RUN chmod -R 775 /formatter.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
