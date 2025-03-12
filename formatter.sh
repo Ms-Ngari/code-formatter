@@ -4,6 +4,7 @@ if [ "${{ inputs.eventName }}" == "push" ]; then
  FILES_CHANGED=$(git diff --name-only ${{ inputs.eventBefore }} ${{ inputs.eventSha }})
 elif [ "${{ inputs.eventName }}" == "pull_request" ]; then
  FILES_CHANGED=$(git diff --name-only ${{ inputs.eventPullBase }} ${{ inputs.eventPullHead }})
+fi
 
 echo "Changed files: $FILES_CHANGED"
 
