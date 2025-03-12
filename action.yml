@@ -16,23 +16,3 @@ inputs:
     description: The committer's name
     required: true
     default: ${{ github.actor }}
-  eventName:
-    description: 'An input for my action'
-    required: true
-    default: ${{ github.event_name }}
-  eventBefore:
-    description: 'An input for my action'
-    required: true
-    default: ${{ github.event.before }}
-  eventSha:
-    description: 'An input for my action'
-    required: true
-    default: ${{ github.sha }}
-  eventPullBase:
-    description: 'An input for my action'
-    required: true
-    default: ${{ github.event.pull_request.base.sha }}
-  eventPullHead:
-    description: 'An input for my action'
-    required: true
-    default: ${{ github.event.pull_request.head.sha }}
