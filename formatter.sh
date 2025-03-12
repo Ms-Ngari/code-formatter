@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "${{ github.event_name }}" == "push" ]; then
  FILES_CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
 elif [ "${{ github.event_name }}" == "pull_request" ]; then
