@@ -8,7 +8,7 @@ git config --global --add safe.directory /github/workspace
 
 ls -l
 pwd
-sh usr/bin/formatter.sh
+sh /usr/bin/formatter.sh
 
 git add -A && git commit -m "Format Code"
 git push --set-upstream origin main
