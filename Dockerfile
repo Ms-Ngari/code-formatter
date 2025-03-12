@@ -19,4 +19,4 @@ RUN chmod +x /formatter.sh
 
 RUN ls -l /
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
