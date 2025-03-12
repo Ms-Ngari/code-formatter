@@ -1,10 +1,9 @@
 #!/bin/bash
 
-if [ "$GITHUB_EVENT_NAME" == "push" ]; then
-  FILES_CHANGED=$(git diff --name-only $GITHUB_BEFORE $GITHUB_SHA)
-elif [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
-  FILES_CHANGED=$(git diff --name-only $GITHUB_PR_BASE_SHA $GITHUB_PR_HEAD_SHA)
-fi
+if [ "${{ github.event_name }}" == "push" ]; then
+ FILES_CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+elif [ "${{ github.event_name }}" == "pull_request" ]; then
+ FILES_CHANGED=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
 
 echo "Changed files: $FILES_CHANGED"
 
