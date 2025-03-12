@@ -17,6 +17,4 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod -R 775 /entrypoint.sh
 RUN chmod -R 775 /formatter.sh
 
-RUN ls -l /
-
 ENTRYPOINT ["/entrypoint.sh"]
