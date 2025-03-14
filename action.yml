@@ -23,3 +23,5 @@ inputs:
     description: The committer's name
     required: true
     default: ${{ github.actor }}
+  before:
+    default: ${{ github.event.before }}
