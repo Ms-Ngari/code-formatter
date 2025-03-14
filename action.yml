@@ -5,8 +5,8 @@ env:
   GITHUB_SHA: ${GITHUB_SHA}
   GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}
   GITHUB_BEFORE: ${GITHUB_EVENT_BEFORE}
-  GITHUB_PR_BASE_SHA: ${{ GITHUB_EVENT_PULLREQUEST_BASE_SHA }}
-  GITHUB_PR_HEAD_SHA: ${{GITHUB_EVENT_PULLREQUEST_HEAD_SHA }}
+  GITHUB_PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+  GITHUB_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
 runs:
   using: "docker"
   image: "Dockerfile"
