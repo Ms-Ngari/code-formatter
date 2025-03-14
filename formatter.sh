@@ -8,8 +8,8 @@ fi
 
 echo "Changed files: $FILES_CHANGED"
 echo $GITHUB_EVENT_NAME
-echo $GITHUB_BEFORE
-echo $GITHUB_SHA
+echo "before: $GITHUB_BEFORE"
+echo "sha: $GITHUB_SHA"
 echo $(git diff --name-only $GITHUB_BEFORE $GITHUB_SHA)
 
 JS_FILES=$(echo "$FILES_CHANGED" | grep -E '\.js$|\.ts$|\.json$|\.html$|\.css$' || true)
