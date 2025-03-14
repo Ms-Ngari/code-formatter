@@ -1,9 +1,9 @@
 # Code Formatter
 A GitHub action to automatically format code using Prettier (JavaScript, TypeScript, JSON, CSS, SCSS, Markdown); Black (Python) and Clang-Format (C, C++, Objective-C). This action runs on a push or pull-request event on the main branch
+
 ## Usage
 
 ### Turn on Github Pages
-
 1. Go to your repository on GitHub.
 2. Click on the **Settings** tab.
 3. Scroll down to the **Pages** section.
@@ -12,12 +12,11 @@ A GitHub action to automatically format code using Prettier (JavaScript, TypeScr
 6. Click Save.
 
 ### Using the Action
-
 To use this action, make a file `.github/workflows/auto-format.yml`.  Here's a
 template to get started:
 
 ```yaml
-name: Auto Format Code Tester
+name: auto-format-code
 
 on:
   push:
