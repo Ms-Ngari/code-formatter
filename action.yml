@@ -4,8 +4,8 @@ description: "Auto formats code on push and pull requests"
 env:
   GITHUB_SHA: ${GITHUB_SHA}
   GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}
-  GITHUB_BEFORE: ${GITHUB_EVENT_BEFORE}
 with: 
+  GITHUB_BEFORE: ${github.event.before}
   GITHUB_PR_BASE_SHA: ${github.event.pull_request.base.sha}
   GITHUB_PR_HEAD_SHA: ${github.event.pull_request.head.sha}
 runs:
