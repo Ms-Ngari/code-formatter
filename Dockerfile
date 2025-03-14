@@ -11,7 +11,7 @@ RUN apt-get install -y clang-format
 RUN pip install black --break-system-packages
 RUN npm install -g prettier
 
-RUN echo "GITHUB_BEFORE=${{ github.event.before }}" >> $GITHUB_ENV
+RUN echo "BEFORE=${{ github.event.before }}" >> "$GITHUB_ENV"
 
 COPY formatter.sh /usr/bin/formatter.sh
 COPY entrypoint.sh /entrypoint.sh
