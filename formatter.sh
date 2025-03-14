@@ -8,7 +8,8 @@ fi
 
 echo "Changed files: $FILES_CHANGED"
 echo $GITHUB_EVENT_NAME
-echo "before: $BEFORE"
+echo "before: ${INPUT_BEFORE}"
+echo "email: ${INPUT_EMAIL}"
 echo "sha: $GITHUB_SHA"
 echo $(git diff --name-only $GITHUB_BEFORE $GITHUB_SHA)
 
