@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$GITHUB_EVENT_NAME" == "push" ]; then
+if [ "${GITHUB_EVENT_NAME}" == "push" ]; then
   FILES_CHANGED=$(git diff --name-only $GITHUB_BEFORE $GITHUB_SHA)
 elif [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
   FILES_CHANGED=$(git diff --name-only $GITHUB_PR_BASE_SHA $GITHUB_PR_HEAD_SHA)
